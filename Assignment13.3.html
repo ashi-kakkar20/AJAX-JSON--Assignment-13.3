@@ -1,0 +1,84 @@
+<!-- JS code for Creating a JSON object that holds data for below mentioned requirement:
+1. Should represent multiple user details.
+2. Every student have name,age,weight,height,friends(array of names), college ( another
+object with details like name, city, pincode) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 13.3</title>
+</head>
+<body id="body">
+   <div id="data"> </div>
+
+    <script>
+    var userData= //Json object with the list of all student details
+    [
+        { "name":"John Doe",
+                "Age": 21,
+                "Weight":72,
+                "Height":170,
+                "Friends":["David","Joey","Maxwell"],
+                "college":{
+                        "Name": "RK State University",
+                        "City": "Delhi",
+                        "Pincode": 110012
+                        
+
+             }
+        },
+
+
+       { "name":"Ronnie Davidson",
+                "Age": 22,
+                "Weight":68,
+                "Height":165,
+                "Friends":["Andrew","John","Shane"],
+                "college":{
+                        "Name": "Christ University",
+                        "City": "Bangalore",
+                        "Pincode": 560100
+                }
+
+              },
+
+
+
+        { "name":"Marc Martin",
+                "Age": 25,
+                "Weight":55,
+                "Height":162,
+                "Friends":["William","Eddy","Shane"],
+                "college":{
+                        "Name": "SRM University",
+                        "City": "Chennai",
+                        "Pincode": 651243
+                }
+
+              }
+        ]
+
+         var htmlText = '';
+
+        var myObj=JSON.stringify(userData);
+        for ( var key in userData ) {
+                htmlText  += '<div> ';
+                htmlText += 'Name: ' + userData[key].name + '<br />';
+                htmlText += 'Age: ' + userData[key].Age + '<br />';
+                htmlText += 'Weight: ' + userData[key].Weight + '<br />';
+                htmlText += 'Height: ' + userData[key].Height + '<br />';
+                htmlText += 'Friends: ' + userData[key].Friends + '<br />';
+                htmlText += 'College Name: ' + userData[key].college.Name + '<br />';
+                htmlText += 'College City: ' + userData[key].college.City + '<br />';
+                htmlText += 'College Pincode: ' + userData[key].college.Pincode + '<br />';
+                htmlText += '<hr />';
+                htmlText += '</div>';
+            }
+
+          document.getElementById('data').innerHTML =htmlText;// Displaying all the json data
+    </script>
+    
+</body>
+</html>
